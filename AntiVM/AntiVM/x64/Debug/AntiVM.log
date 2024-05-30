@@ -1,0 +1,5 @@
+﻿  AntiVM.cpp
+V:\S12\Evasion\AntiVM\AntiVM\AntiVM\AntiVMClass.h(51,38): warning C4244: 'return': conversion from 'DWORDLONG' to 'int', possible loss of data
+  AntiVM.vcxproj -> V:\S12\Evasion\AntiVM\AntiVM\x64\Debug\AntiVM.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
